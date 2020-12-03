@@ -1,0 +1,9 @@
+*.out
+*.a
+*.o
+\#*\#
+*~
+.\#*
+*.gc*
+unit_tests
+vgcore.*
