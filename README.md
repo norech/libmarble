@@ -32,7 +32,7 @@ for (mrbl_object_t *blk = root->value.objval; blk->next != NULL; blk = blk->next
         case MRBL_ARRAY:
             mrbl_array_t *arr = blk->value.arrval;
             while (arr->next != NULL) {
-                void *value = arr->value;
+                mrbl_u_type_t value = arr->value;
                 // ...
                 arr = arr->next;
             }
