@@ -1,8 +1,8 @@
 /*
-** MARBLE
-**
-** Project by:
-** Alexis "Norech" CHERON
+** EPITECH PROJECT, 2021
+** marble by Alexis Cheron
+** File description:
+** Source code
 */
 #include <marble/internal/lexer.h>
 #include <marble/internal/util.h>
