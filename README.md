@@ -11,16 +11,16 @@ mrbl_json_t *root = mrbl_parse_json(json);
 if(root->type != MRBL_OBJECT) // will check if root node is an object
     exit(84);
 
-mrbl_object_t *pair1 = root->value;
-printf("%s = %s", pair1->key, pair1->value); // will print: user = john doe
+mrbl_object_t *pair1 = root->value.objval;
+printf("%s = %s", pair1->key, pair1->value.strval); // will print: user = john doe
 
 // Will iterate through each value of the object
 // since mrbl_object_t is a linked list
-for (mrbl_object_t *blk = root->value; blk->next != NULL; blk = blk->next) {
+for (mrbl_object_t *blk = root->value.objval; blk->next != NULL; blk = blk->next) {
     switch (blk->type) {
     
         case MRBL_OBJECT:
-            mrbl_object_t *child_object = blk->value;
+            mrbl_object_t *child_object = blk->value.objval;
             while (child_object->next != NULL) {
                 char *key = child_object->key;
                 mrbl_object_t *value = child_object->value.objval;
