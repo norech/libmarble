@@ -25,26 +25,26 @@ void print_indent(int indent)
         printf("    ");
 }
 
-void display_value(mrbl_type_t type, void *value, int indent)
+void display_value(mrbl_type_t type, mrbl_u_type_t value, int indent)
 {
     switch (type) {
         case MRBL_OBJECT:
-            display_object(value, indent + 1);
+            display_object(value.objval, indent + 1);
             break;
         case MRBL_ARRAY:
-            display_array(value, indent + 1);
+            display_array(value.arrval, indent + 1);
             break;
         case MRBL_STRING:
-            printf("%s", (char *)value);
+            printf("%s", value.strval);
             break;
         case MRBL_FLOAT:
-            printf("%.8lf", *(double *)&value);
+            printf("%.8lf", value.floatval);
             break;
         case MRBL_INT:
-            printf("%ld", (long)value);
+            printf("%ld", value.intval);
             break;
         case MRBL_BOOL:
-            printf("%s", value ? "true" : "false");
+            printf("%s", value.boolval ? "true" : "false");
             break;
         case MRBL_NULL:
             printf("NULL");

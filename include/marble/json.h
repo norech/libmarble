@@ -11,7 +11,7 @@
 
 typedef struct mrbl_json {
     mrbl_type_t type;
-    void *value;
+    mrbl_u_type_t value;
 } mrbl_json_t;
 
 mrbl_json_t *mrbl_parse_json(char *input);

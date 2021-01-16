@@ -46,7 +46,7 @@ mrbl_object_t *mrbl_parse_json_object(char **str)
     if (mrbl_object_close(str)) {
         object = malloc(sizeof(mrbl_object_t));
         object->type = MRBL_EMPTY;
-        object->value = NULL;
+        object->value.intval = 0;
         object->next = NULL;
         return (object);
     }

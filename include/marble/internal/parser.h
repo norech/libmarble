@@ -9,7 +9,7 @@
 #ifndef MRBL_PARSER_H
 #define MRBL_PARSER_H
 
-mrbl_type_t mrbl_parse_json_value(char **str, void **value);
+mrbl_type_t mrbl_parse_json_value(char **str, mrbl_u_type_t *value);
 mrbl_array_t *mrbl_parse_json_array(char **str);
 mrbl_object_t *mrbl_parse_json_object(char **str);
 

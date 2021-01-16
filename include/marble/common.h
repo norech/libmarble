@@ -20,16 +20,25 @@ typedef enum {
     MRBL_OBJECT,
 } mrbl_type_t;
 
+typedef union mrbl_u_type {
+    char *strval;
+    bool boolval;
+    long intval;
+    double floatval;
+    struct mrbl_array *arrval;
+    struct mrbl_object *objval;
+} mrbl_u_type_t;
+
 typedef struct mrbl_object {
     mrbl_type_t type;
     char *key;
-    void *value;
+    union mrbl_u_type value;
     struct mrbl_object *next;
 } mrbl_object_t;
 
 typedef struct mrbl_array {
     mrbl_type_t type;
-    void *value;
+    union mrbl_u_type value;
     struct mrbl_array *next;
 } mrbl_array_t;
 
